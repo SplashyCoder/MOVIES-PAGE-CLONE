@@ -1,14 +1,14 @@
 import React from "react";
-import MenuItem from "@/components/MenuItem";
+import { MenuItem, NavBarItem } from "@/components/MenuItem";
 import { AiFillHome } from "react-icons/ai";
 import { BsFillInfoCircleFill } from "react-icons/bs";
 import Link from "next/link";
 import DarkModeSwitch from "./DarkModeSwitch";
 
-const Header = () => {
+const NavBar = () => {
   return (
-    <div>
-      <nav className="flex justify-between items-center p-3 max-w-6xl mx-auto">
+    <nav>
+      <div className="flex justify-between items-center p-3 max-w-6xl mx-auto">
         <div className="flex gap-4 ">
           <MenuItem title="home" address="/" Icon={AiFillHome} />
           <MenuItem
@@ -26,9 +26,14 @@ const Header = () => {
             <span className="text-xl hidden sm:inline ">Clone</span>
           </Link>
         </div>
-      </nav>
-    </div>
+      </div>
+      <div className="flex items-center justify-center gap-2 dark:bg-slate-600 bg-amber-200">
+        <NavBarItem title="Top rated" address={"/"} />
+        <NavBarItem title="Trending " address={"/"} />
+      </div>
+    </nav>
   );
 };
 
-export default Header;
+export default NavBar;
+import Header from "@/components/NavBar";

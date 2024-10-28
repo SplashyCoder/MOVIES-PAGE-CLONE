@@ -5,3 +5,5 @@ export interface MenuItemInterface {
   address: string;
   Icon: IconType;
 }
+
+export interface NavBarItemInterface extends Omit<MenuItemInterface, "Icon"> {}
