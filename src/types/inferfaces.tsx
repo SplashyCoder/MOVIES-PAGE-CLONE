@@ -7,3 +7,7 @@ export interface MenuItemInterface {
 }
 
 export interface NavBarItemInterface extends Omit<MenuItemInterface, "Icon"> {}
+
+export interface searchParams {
+  genre: String;
+}
