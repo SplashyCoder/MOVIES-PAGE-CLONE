@@ -1,20 +1,23 @@
 import React from "react";
 import { searchParams } from "@/types/inferfaces";
+import Results from "@/components/ Results";
+import { moviesInterface } from "@/types/inferfaces";
 
 const API_KEY = process.env.API_KEY;
 
 const Home = async ({ genre }: searchParams) => {
   const fetchTrending = "fetchTrending";
+  const fetchTopRated = "fetchTopRated";
   const movieTop = `/movie/top_rated`;
   const trending = `/trending/all/week`;
 
-  const paramsGenre = genre || fetchTrending;
+  const paramsGenre = fetchTopRated || fetchTrending;
 
   const fetchData = async () => {
     try {
       const res = await fetch(
         `https://api.themoviedb.org/3${
-          paramsGenre === fetchTrending ? movieTop : trending
+          paramsGenre === fetchTopRated ? movieTop : trending
         }?api_key=${API_KEY}&language=en-US&page=1`
       );
       const data = await res.json(); // Awaiting the response JSON
@@ -24,14 +27,12 @@ const Home = async ({ genre }: searchParams) => {
     }
   };
 
-  const result = await fetchData();
-  console.log(result.original_title);
+  const results: moviesInterface[] = await fetchData();
+  console.log(results);
 
   return (
     <div>
-      {/* {result.map((res) => {
-        return <div key={res.id}>{res.title}</div>;
-      })} */}
+      <Results movies={results} />
     </div>
   );
 };

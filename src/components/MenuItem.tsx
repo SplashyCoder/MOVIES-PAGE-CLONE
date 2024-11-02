@@ -1,19 +1,25 @@
+"use client";
 import React from "react";
 import { MenuItemInterface, NavBarItemInterface } from "@/types/inferfaces";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+
 export const MenuItem = ({ title, address, Icon }: MenuItemInterface) => {
   return (
     <Link className="hover:text-amber-500" href={address}>
-      <Icon className="text-2xl sm:hidden " />
+      {Icon}
       <p className="uppercase hidden sm:inline text-sm  ">{title}</p>
     </Link>
   );
 };
 
-export const NavBarItem = ({ title, address }: NavBarItemInterface) => {
+export const NavBarItem = ({ title, param }: NavBarItemInterface) => {
+  const searchParams = useSearchParams();
+  const genre = searchParams.get("genre");
+
   return (
-    <Link className="hover:text-amber-500" href={address}>
-      <p className=" hidden sm:inline text-sm  ">{title}</p>
+    <Link href={`/?genre=${param}`} className="hover:text-amber-500">
+      <p className="uppercase text-sm">{title}</p>
     </Link>
   );
 };
