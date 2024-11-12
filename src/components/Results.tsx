@@ -6,6 +6,8 @@ interface result {
 }
 
 const Results = ({ movies }: result) => {
+  console.log(typeof movies);
+
   return (
     <div className="flex flex-col items-center justify-center p-4">
       {movies.map((i) => {
