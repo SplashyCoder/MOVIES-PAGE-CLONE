@@ -3,8 +3,10 @@
 import { useState } from "react";
 import useFetch from "@/app/hooks/useFetch";
 import Results from "@/components/Results";
+import { useDataContext } from "@/context/DataContext";
 
 const Home = () => {
+  const { data } = useDataContext();
   // const [url, setUrl] = useState("/movie/top_rated");
   // const { data, loading } = useFetch(url);
 
@@ -27,7 +29,7 @@ const Home = () => {
       <button className="border border-amber-500" onClick={handleFetchPopular}>
         Load Popular
       </button> */}
-      {/* <Results movies={data} /> */}
+      <Results movies={data} />
     </div>
   );
 };

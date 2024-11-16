@@ -8,18 +8,19 @@ import Link from "next/link";
 import DarkModeSwitch from "./DarkModeSwitch";
 
 const NavBar = () => {
+  const { setData } = useDataContext();
+
   const [url, setUrl] = useState("/movie/top_rated");
   const { data, loading } = useFetch(url);
 
   const handleFetchTopRated = () => {
-    setUrl("/movie/top_rated"); // Cambia según tu preferencia
+    setUrl("/movie/top_rated");
   };
 
   const handleFetchPopular = () => {
-    setUrl("/trending/all/week"); // Cambia según tu preferencia
+    setUrl("/trending/all/week");
   };
-  // if (loading) return <p>Loading...</p>;
-  // if (!data) return <p>No data available</p>;
+  setData(data);
   console.log(data);
 
   return (
@@ -66,3 +67,4 @@ const NavBar = () => {
 export default NavBar;
 import Header from "@/components/NavBar";
 import useFetch from "@/app/hooks/useFetch";
+import { useDataContext } from "@/context/DataContext";

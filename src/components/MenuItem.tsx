@@ -19,7 +19,6 @@ export const NavBarItem = ({
   fetchFunction,
 }: NavBarItemInterface) => {
   const searchParams = useSearchParams();
-  const genre = searchParams.get("genre");
 
   return (
     <button onClick={fetchFunction}>
