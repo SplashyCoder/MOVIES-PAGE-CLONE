@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import { MenuItem, NavBarItem } from "@/components/MenuItem";
 import { AiFillHome } from "react-icons/ai";
 import { BsFillInfoCircleFill } from "react-icons/bs";
@@ -6,6 +8,20 @@ import Link from "next/link";
 import DarkModeSwitch from "./DarkModeSwitch";
 
 const NavBar = () => {
+  const [url, setUrl] = useState("/movie/top_rated");
+  const { data, loading } = useFetch(url);
+
+  const handleFetchTopRated = () => {
+    setUrl("/movie/top_rated"); // Cambia según tu preferencia
+  };
+
+  const handleFetchPopular = () => {
+    setUrl("/trending/all/week"); // Cambia según tu preferencia
+  };
+  // if (loading) return <p>Loading...</p>;
+  // if (!data) return <p>No data available</p>;
+  console.log(data);
+
   return (
     <nav>
       <div className="flex justify-between items-center p-3 max-w-6xl mx-auto">
@@ -32,8 +48,16 @@ const NavBar = () => {
         </div>
       </div>
       <div className="flex items-center justify-center gap-2 dark:bg-slate-600 bg-amber-200">
-        <NavBarItem title="Top rated" param="fetchTrending" />
-        <NavBarItem title="Trending " param="fetchTopRated" />
+        <NavBarItem
+          title="Top rated"
+          param="fetchTrending"
+          fetchFunction={handleFetchTopRated}
+        />
+        <NavBarItem
+          title="Trending "
+          param="fetchTopRated"
+          fetchFunction={handleFetchPopular}
+        />
       </div>
     </nav>
   );
@@ -41,3 +65,4 @@ const NavBar = () => {
 
 export default NavBar;
 import Header from "@/components/NavBar";
+import useFetch from "@/app/hooks/useFetch";

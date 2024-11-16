@@ -13,13 +13,19 @@ export const MenuItem = ({ title, address, Icon }: MenuItemInterface) => {
   );
 };
 
-export const NavBarItem = ({ title, param }: NavBarItemInterface) => {
+export const NavBarItem = ({
+  title,
+  param,
+  fetchFunction,
+}: NavBarItemInterface) => {
   const searchParams = useSearchParams();
   const genre = searchParams.get("genre");
 
   return (
-    <Link href={`/?genre=${param}`} className="hover:text-amber-500">
-      <p className="uppercase text-sm">{title}</p>
-    </Link>
+    <button onClick={fetchFunction}>
+      <Link href={`/?genre=${param}`} className="hover:text-amber-500">
+        <p className="uppercase text-sm">{title}</p>
+      </Link>
+    </button>
   );
 };

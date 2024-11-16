@@ -9,6 +9,7 @@ export interface MenuItemInterface {
 export interface NavBarItemInterface
   extends Omit<MenuItemInterface, "Icon" | "address"> {
   param: String;
+  fetchFunction: () => void;
 }
 
 export interface searchParams {
