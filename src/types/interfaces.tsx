@@ -1,5 +1,3 @@
-import { IconType } from "react-icons";
-
 export interface MenuItemInterface {
   title: string;
   address: string;
@@ -22,7 +20,9 @@ export interface moviesInterface {
   name?: string;
   first_air_date?: string;
   release_date?: string;
-  vote_average?: number;
   poster_path?: string;
   overview?: string;
+  backdrop_path?: string;
+  vote_average?: number;
+  vote_count?: number;
 }

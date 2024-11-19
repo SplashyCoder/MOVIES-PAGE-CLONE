@@ -13,7 +13,7 @@ const Results = ({ movies }: result) => {
         return (
           <div
             key={i.id}
-            className=" flex flex-col items-center justify-center border border-amber-600 m-2 p-1 w-1/2"
+            className=" flex flex-col items-center justify-center"
           >
             <Card {...i} />
           </div>
