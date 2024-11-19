@@ -1,13 +1,12 @@
 import React from "react";
-import { moviesInterface } from "@/types/inferfaces";
+import { moviesInterface } from "@/types/interfaces";
+import Card from "./Card";
 
 interface result {
   movies: moviesInterface[];
 }
 
 const Results = ({ movies }: result) => {
-  console.log(typeof movies);
-
   return (
     <div className="flex flex-col items-center justify-center p-4">
       {movies.map((i) => {
@@ -16,8 +15,7 @@ const Results = ({ movies }: result) => {
             key={i.id}
             className=" flex flex-col items-center justify-center border border-amber-600 m-2 p-1 w-1/2"
           >
-            <p>{i.title}</p>
-            <p>{i.release_date}</p>
+            <Card {...i} />
           </div>
         );
       })}

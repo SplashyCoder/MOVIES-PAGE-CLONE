@@ -51,12 +51,12 @@ const NavBar = () => {
       <div className="flex items-center justify-center gap-2 dark:bg-slate-600 bg-amber-200">
         <NavBarItem
           title="Top rated"
-          param="fetchTrending"
+          param="fetchTopRated"
           fetchFunction={handleFetchTopRated}
         />
         <NavBarItem
           title="Trending "
-          param="fetchTopRated"
+          param="fetchTrending"
           fetchFunction={handleFetchPopular}
         />
       </div>

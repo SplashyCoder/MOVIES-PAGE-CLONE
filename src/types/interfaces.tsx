@@ -19,6 +19,8 @@ export interface searchParams {
 export interface moviesInterface {
   id: number;
   title: string;
+  name?: string;
+  first_air_date?: string;
   release_date?: string;
   vote_average?: number;
   poster_path?: string;

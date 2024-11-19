@@ -1,6 +1,6 @@
 "use client";
 
-import { moviesInterface } from "@/types/inferfaces";
+import { moviesInterface } from "@/types/interfaces";
 
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 

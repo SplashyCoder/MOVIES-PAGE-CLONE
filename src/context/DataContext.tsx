@@ -1,5 +1,5 @@
 "use client";
-import { moviesInterface } from "@/types/inferfaces";
+import { moviesInterface } from "@/types/interfaces";
 import React, { createContext, useContext, useState } from "react";
 
 interface DataContextProps {

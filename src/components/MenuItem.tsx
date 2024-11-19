@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { MenuItemInterface, NavBarItemInterface } from "@/types/inferfaces";
+import { MenuItemInterface, NavBarItemInterface } from "@/types/interfaces";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
@@ -21,7 +21,7 @@ export const NavBarItem = ({
   const searchParams = useSearchParams();
 
   return (
-    <button onClick={fetchFunction}>
+    <button onClick={fetchFunction} className="p-2">
       <Link href={`/?genre=${param}`} className="hover:text-amber-500">
         <p className="uppercase text-sm">{title}</p>
       </Link>
