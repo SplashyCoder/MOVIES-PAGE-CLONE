@@ -10,7 +10,7 @@ const Results = ({ movies }: result) => {
   return (
     <div
       // className="flex flex-col items-center justify-center p-4"
-      className="grid grid-cols-3 gap-4"
+      className="grid grid-cols-3 gap-4 p-4"
     >
       {movies.map((i) => {
         return (

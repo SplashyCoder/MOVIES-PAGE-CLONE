@@ -16,7 +16,7 @@ const Card = ({
   return (
     <div
       // className=" flex flex-col items-center justify-center border border-amber-600 m-2 p-2 rounded "
-      className="group cursor-pointer sm:hover:shadow-slate-400 sm:shadow-md rounded-lg border border-amber-400 sm:m-2 overflow-hidden max-w-48"
+      className="group cursor-pointer sm:hover:shadow-slate-400 sm:shadow-md rounded-lg border border-amber-400 sm:m-2 overflow-hidden w-44"
       // className="group cursor-pointer sm:hover:shadow-slate-400 sm:shadow-md rounded-lg sm:border sm:border-slate-400 sm:m-2 transition-shadow duration-200"
     >
       <Image
