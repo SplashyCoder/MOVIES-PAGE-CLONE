@@ -1,11 +1,15 @@
 "use client";
+<<<<<<< HEAD
 
 import { moviesInterface } from "@/types/interfaces";
+=======
+import { useState, useEffect } from "react";
+import { moviesInterface } from "@/types/inferfaces";
+>>>>>>> tangent
 
 const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
 // hooks/useFetch.ts
-import { useState, useEffect } from "react";
 
 const useFetch = (url: string) => {
   const [data, setData] = useState<moviesInterface[]>([]);
